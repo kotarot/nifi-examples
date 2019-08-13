@@ -1,3 +1,3 @@
 # nifi-examples
 
-Apache NiFi templates of exmaple flows.
+Apache NiFi templates of example dataflows.
