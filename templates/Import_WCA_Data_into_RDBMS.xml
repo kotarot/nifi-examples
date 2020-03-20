@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <template encoding-version="1.2">
-    <description>This dataflow imports WCA Database to a local MariaDB.</description>
+    <description>This dataflow imports WCA Database into MariaDB. Version 2020-03-20.</description>
     <groupId>89b56d95-016c-1000-ffff-ffffb770e68c</groupId>
-    <name>Import WCA Database</name>
+    <name>Import WCA Data into RDBMS</name>
     <snippet>
         <connections>
             <id>16a3a00b-067c-3f9e-0000-000000000000</id>
@@ -59,13 +59,25 @@
             <parentGroupId>9795df0e-2638-34e9-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <bends>
+                <x>711.7556771183724</x>
+                <y>516.4940452619777</y>
+            </bends>
+            <bends>
+                <x>851.7556771183724</x>
+                <y>515.4940452619777</y>
+            </bends>
+            <bends>
+                <x>853.7556771183724</x>
+                <y>64.49404526197767</y>
+            </bends>
             <destination>
                 <groupId>9795df0e-2638-34e9-0000-000000000000</groupId>
                 <id>bfd1a4d8-059b-3f1f-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
-            <labelIndex>1</labelIndex>
+            <labelIndex>0</labelIndex>
             <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
             <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
             <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
@@ -679,7 +691,7 @@
                 <properties>
                     <entry>
                         <key>File to Fetch</key>
-                        <value>${absolute.path}/WCA_export.sql</value>
+                        <value>${absolute.path}/${filename:replace('.zip', '')}</value>
                     </entry>
                     <entry>
                         <key>Completion Strategy</key>
@@ -1169,5 +1181,5 @@
             <type>org.apache.nifi.processors.standard.InvokeHTTP</type>
         </processors>
     </snippet>
-    <timestamp>08/19/2019 23:18:32 JST</timestamp>
+    <timestamp>03/20/2020 18:00:02 JST</timestamp>
 </template>
